@@ -9,7 +9,6 @@ public interface WorkoutExerciseService {
 	public WorkoutExercise addWorkoutExercise(WorkoutExercise e);
 	public WorkoutExercise getWorkoutExercise(WorkoutExerciseId id);
 	public List<WorkoutExercise> getAllWorkoutExercises();
-	public List<WorkoutExercise> getAllByWorkout(int wid);
 	public WorkoutExercise updateWorkoutExercise(WorkoutExercise change);
 	public boolean deleteWorkoutExercise(WorkoutExercise e);
 }

@@ -6,7 +6,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -33,14 +32,9 @@ public class WorkoutExerciseController {
 		return ws.getAllWorkoutExercises();
 	}
 	
-	@GetMapping(value = "/workoutExercise/{id}")
-	public List<WorkoutExercise> getAllByWorkout(@PathVariable("id") int wid) {
-		return ws.getAllByWorkout(wid);
-	}
-	
-	@PostMapping(value = "/workoutExercise/search", produces = "application/json")
-	public WorkoutExercise getWorkoutExercise(@RequestBody WorkoutExerciseId id) {
-		return ws.getWorkoutExercise(id);
+	@GetMapping(value = "/workoutExercise/search", produces = "application/json")
+	public WorkoutExercise getWorkoutExercise(@RequestParam(name = "workout_id") int workout_id, @RequestParam(name = "exercise_id") int exercise_id) {
+		return ws.getWorkoutExercise(new WorkoutExerciseId(workout_id, exercise_id));
 	}
 	
 	@PutMapping(value = "/workoutExercise/search", produces = "application/json")

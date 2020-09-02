@@ -7,8 +7,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.revature.beans.Workout;
-import com.revature.beans.WorkoutExercise;
-import com.revature.repositories.WorkoutExerciseRepository;
 import com.revature.repositories.WorkoutRepository;
 
 @Service
@@ -17,9 +15,6 @@ public class WorkoutServiceImpl implements WorkoutService{
 	@Autowired
 	WorkoutRepository wr;
 
-	@Autowired
-	WorkoutExerciseRepository war;
-	
 	@Override
 	public Workout addWorkout(Workout w) {
 		return wr.save(w);
@@ -60,18 +55,6 @@ public class WorkoutServiceImpl implements WorkoutService{
 	}
 
 	@Override
-	public double getWorkoutTime(int id) {
-		List<WorkoutExercise> wes = (List<WorkoutExercise>) war.findAll();
-		double totalTime = 0;
-		
-		for(WorkoutExercise we : wes) {
-			if(we.getId().getWorkoutId() == id) 
-				totalTime += we.getTime() * we.getSets();				
-		}
-		return totalTime;
-	}
-	
-	@Override
 	public Workout updateWorkout(Workout change) {
 		return wr.save(change);
 	}
@@ -86,8 +69,6 @@ public class WorkoutServiceImpl implements WorkoutService{
 			return false;
 		}
 	}
-
-
 
 
 	

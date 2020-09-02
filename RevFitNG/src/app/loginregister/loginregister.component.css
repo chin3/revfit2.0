@@ -1,0 +1,55 @@
+.page-header {
+    position: center;
+  }
+
+  .page-title {
+    font-size: 62px;
+    line-height: 1;
+    color: #fff;
+    font-weight: 600;
+    text-align: center;
+  }
+
+.page-caption {
+  padding-top: 175px;
+  padding-bottom: 170px;
+}
+.card-section {
+  position: relative;
+  bottom: 10px;
+}
+.card-block {
+  padding: 80px;
+}
+.section-title {
+  margin-bottom: 60px;
+}
+
+.card-body {
+  width: 100%;
+}
+
+.login {
+  width: 20%;
+}
+
+.ReimbForm {
+  width: 100%;
+  font-weight: 200;
+}
+
+.formBody {
+	text-align:center;
+	width: 25%;
+	font-weight: 200;
+}
+
+.iframe {
+	zoom: 1;
+}
+
+#background {
+    background: url('../resources/images/workoutsplash.jpeg') no-repeat;
+    background-size: cover;
+    position: center;
+}

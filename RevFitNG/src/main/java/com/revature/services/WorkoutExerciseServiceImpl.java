@@ -1,6 +1,5 @@
 package com.revature.services;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,19 +29,6 @@ public class WorkoutExerciseServiceImpl implements WorkoutExerciseService {
 	@Override
 	public List<WorkoutExercise> getAllWorkoutExercises() {
 		return (List<WorkoutExercise>) wer.findAll();
-	}
-	
-	@Override
-	public List<WorkoutExercise> getAllByWorkout(int wid) {
-		List<WorkoutExercise> wes = (List<WorkoutExercise>) wer.findAll();
-		List<WorkoutExercise> returns = new ArrayList<WorkoutExercise>();
-		
-		for(WorkoutExercise w : wes) {
-			if(w.getId().getWorkoutId() == wid) {
-				returns.add(w);
-			}
-		}
-		return returns;
 	}
 
 	@Override
