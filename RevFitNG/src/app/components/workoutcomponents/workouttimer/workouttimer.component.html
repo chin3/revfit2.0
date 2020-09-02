@@ -25,9 +25,16 @@
     <hr>
     <p style="text-align: center;">{{timeLeft}} Seconds Left....</p>
 
-    <table class="table table-bordered table-striped" *ngFor="let e of currWorkout.exercises">
-        <tr>
+    <table class="table table-striped">
+        <thead>
+            <th>Exercise</th>
+            <th>Sets</th>
+            <th>Interval Length</th>
+        </thead>
+        <tr *ngFor="let e of currWorkout.exercises">
             <td>{{e.name}}</td>
+            <td></td>
+            <td>time</td>
         </tr>
     </table>
 </div>
