@@ -1,60 +1,54 @@
 <div class="card">
     <ng-template #mymodal let-modal>
-		<div class="modal-header">
-		  <h4 class="modal-title" id="modal-basic-title">Add a New Exercise</h4>
-		  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
-			<span aria-hidden="true">×</span>
-		  </button>
+        <div class="modal-header">
+            <h4 class="modal-title" id="modal-basic-title">Add a New Exercise</h4>
+            <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">×</span>
+            </button>
         </div>
         <div class="modal-body">
-			<div class="modal-body mx-3">
-                <div id = "excerciseTable">
+            <div class="modal-body mx-3">
+                <div id="excerciseTable">
                     <label>Current Exercises</label>
                     <table>
-                        <tr *ngFor = "let in of counter(amountOfCards); let i = index">
+                        <tr *ngFor="let in of counter(amountOfCards); let i = index">
                             <td>
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
                                         <label for="orangeForm-name">Exercise {{i}}</label>
-                                        <input type="text" id="orangeForm-name" class="form-control" [(ngModel)] = "exercises[i].name">
+                                        <input type="text" id="orangeForm-name" class="form-control"
+                                            [(ngModel)]="exercises[i].name">
                                     </div>
+
                                     <label for="orangeForm-mGroup">Muscle Group</label>
-					                <input type="text" id="orangeForm-mGroup" class="form-control" [(ngModel)] = "exercises[i].muscleGroup">
-                                  </div>
+                                    <input type="text" id="orangeForm-mGroup" class="form-control"
+                                        [(ngModel)]="exercises[i].muscleGroup">
+
+                                    <label for="orangeForm-sets">Sets</label>
+                                    <input type="number" class="form-control" [(ngModel)]="sets">
+                                    
+                                    <label for="orangeForm-time">Time</label>
+                                    <input type="number" class="form-control" [(ngModel)]="time">
+                                </div>
                             </td>
                         </tr>
 
                         <tr>
                             <td>
-                            <div class="card" style="width: 18rem;">
-                                <div class="card-body">
-                                  <button (click) ="addCard()" class="card-link">Add Exercise</button>
+                                <div class="card" style="width: 18rem;">
+                                    <div class="card-body">
+                                        <button (click)="addCard()" class="card-link">Add Exercise</button>
+                                    </div>
                                 </div>
-                              </div>
                             <td>
                         </tr>
                     </table>
                 </div>
-				<!-- <div class="md-form mb-4">
-					<label for="orangeForm-name">Name</label>
-					<input type="text" id="orangeForm-name" class="form-control" [(ngModel)] = "new_exercise.name">
-                </div>
-                <div class="md-form mb-4">
-					<label for="orangeForm-mGroup">Muscle Group</label>
-					<input type="text" id="orangeForm-mGroup" class="form-control" [(ngModel)] = "new_exercise.muscleGroup">
-                </div>
-                <div class="md-form mb-4">
-					<label for="orangeForm-name">Time</label>
-					<input type="text" id="orangeForm-name" class="form-control" [(ngModel)] = "new_exercise.name">
-                </div>
-                <div class="md-form mb-4">
-					<label for="orangeForm-mGroup">Sets</label>
-					<input type="text" id="orangeForm-mGroup" class="form-control" [(ngModel)] = "new_exercise.muscleGroup">
-                </div> -->
             </div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); addWorkout()">Add Workout</button>
+            <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); addWorkout()">Submit
+                Workout</button>
         </div>
     </ng-template>
     <div class="card-body">
@@ -63,20 +57,20 @@
     </div>
     <div id="inputDiv">
         <label for="nameValue">Name:</label>
-        <input type="text" [(ngModel)] = "new_workout.name" id="nameValue"><br>
+        <input type="text" [(ngModel)]="new_workout.name" id="nameValue"><br>
         <label for="typeValue">Type:</label>
-        <input type="text" [(ngModel)] = "new_workout.type" id="typeValue"><br>
+        <input type="text" [(ngModel)]="new_workout.type" id="typeValue"><br>
         <label for="intensityValue">Intensity:</label>
         <div ngbDropdown class="d-inline-block">
             <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selected}}</button>
             <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
-              <button ngbDropdownItem (click)="setEasy()">Beginner</button>
-              <button ngbDropdownItem (click)="setMedium()">Moderate</button>
-              <button ngbDropdownItem (click)="setHard()">Intense</button>
+                <button ngbDropdownItem (click)="setEasy()">Beginner</button>
+                <button ngbDropdownItem (click)="setMedium()">Moderate</button>
+                <button ngbDropdownItem (click)="setHard()">Intense</button>
             </div>
         </div>
         <br>
-        <button (click) = "open(mymodal)">Add Workout</button>
+        <button (click)="open(mymodal)">Add Workout</button>
     </div>
     <div class="card-footer">
         <small class="text-muted">Last updated 3 mins ago</small>
