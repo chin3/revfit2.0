@@ -1,0 +1,139 @@
+<body style="background-color:#575a66">
+	<ng-template #mymodal let-modal>
+		<div class="modal-header">
+		  <h4 class="modal-title" id="modal-basic-title">Register a new RevFit User</h4>
+		  <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+			<span aria-hidden="true">×</span>
+		  </button>
+		</div>
+		<div class="modal-body">
+			<div class="modal-body mx-3">
+				<div class="md-form mb-4">
+					<label for="orangeForm-name">Your username</label>
+					<input type="text" id="orangeForm-name" class="form-control" [(ngModel)] = "new_user.username">
+				</div>
+				<div class="md-form mb-4">
+				  <label for="orangeForm-email">Your email</label>
+				  <input type="email" id="orangeForm-email" class="form-control" [(ngModel)] = "new_user.email">
+				  
+				</div>
+		
+				<div class="md-form mb-4">
+				  <label for="orangeForm-pass">Your password</label>
+				  <input type="password" id="orangeForm-pass" class="form-control" [(ngModel)] = "new_user.password">
+				  
+				</div>
+				<div class="md-form mb-4">
+					<label for="orangeForm-pass">Re-type password</label>
+					<input type="password" id="orangeForm-pass" class="form-control">
+					
+				</div>
+				<div class="md-form mb-4">
+					<label for="orangeForm-first">First Name</label>
+					<input type="text" id="orangeForm-first" class="form-control" [(ngModel)] = "new_user.firstName">
+					
+				  </div>
+				  <div class="md-form mb-4">
+					<label for="orangeForm-last">Last Name</label>
+					<input type="text" id="orangeForm-last" class="form-control" [(ngModel)] = "new_user.lastName">
+					
+				  </div>
+				
+				<!--
+				<div class="md-form mb-4">
+					<label for="orangeForm-height">Height</label>
+					<input type="password" id="orangeForm-pass" class="form-control" > 
+					<div class="row">
+						<div class="col">
+						  <div ngbDropdown class="d-inline-block">
+							<button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>Toggle dropdown</button>
+							<div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+							  <button ngbDropdownItem>Action - 1</button>
+							  <button ngbDropdownItem>Another Action</button>
+							  <button ngbDropdownItem>Something else is here</button>
+							</div>
+						  </div>
+						</div>
+						</div>
+					
+
+
+				</div> -->
+				<div class="md-form mb-4">
+					<label for="orangeForm-weight">Weight</label>
+					<input type="number" id="orangeForm-weight" class="form-control" [(ngModel)] = "new_user.weight">
+					
+				</div>
+
+				<div class="md-form mb-4">
+					<label for="orangeForm-height">Height</label>
+					<input type="number" id="orangeForm-height" class="form-control" [(ngModel)] = "new_user.height">
+				</div>
+
+			  </div>
+
+		</div>
+		<div class="modal-footer">
+		  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); register()">Submit</button>
+		</div>
+	  </ng-template>
+	
+	
+
+	<div id = "background"  style="height:2200px">
+	<div class="page-header">
+		<div class="container">
+			<div class="row">
+				<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+					<div class="page-caption">
+
+						<br/>
+						<br/>
+						<h1 class="page-title" style="color:white; text-align:center; font-size:120px;">RevFit - Home Fitness Revolution</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+    <br/>
+    <br/>
+	<br/>
+	<br/>
+    <br/>
+	<br/>
+	<br/>
+    <br/>
+	<br/>
+	<br/>
+    <br/>
+    <br/>
+	<div class="card" style="align-items: center; background-color: rgba(121, 115, 115, .10); opacity: 95%;">
+		<article class="login" style="background-color: #808391; opacity: 1; ">
+			<p class="text-center" id="authtext" style="font-size: 1.8em; color: white; opacity: 1;">Please Log In Or Register</p>
+		<form>
+		<div class="form-group" style="background-color: #808391; opacity: 1">
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> <i class="fa fa-user"></i> </span>
+			 </div>
+			<input name="username" style="background-color:#dae0f5" class="form-control" placeholder="username" type="text" [(ngModel)] = "username">
+		</div> 
+		</div> 
+		<div class="form-group">
+		<div class="input-group">
+			<div class="input-group-prepend">
+				<span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+			 </div>
+			<input class="form-control" style="background-color:#dae0f5" placeholder="password" type="password" name="password" [(ngModel)] = "password">
+		</div> 
+		</div> 
+		<div class="form-group">
+		</div> 
+		</form>
+		<button class="btn btn-primary btn-block" (click) = "login()">Login</button>
+		<button  class="btn btn-secondary btn-block" (click)="open(mymodal)">Register New User</button>
+	</article>
+    </div> 
+</div>
+</body>

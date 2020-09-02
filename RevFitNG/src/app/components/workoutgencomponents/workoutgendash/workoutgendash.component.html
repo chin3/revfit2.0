@@ -1,0 +1,26 @@
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">Generate Workout</h5>
+        <p class="card-text"></p>
+    </div>
+    <div id="inputDiv">
+        <label for="nameValue">Name:</label>
+        <input type="text" [(ngModel)] = "new_workout.name" id="nameValue"><br>
+        <label for="typeValue">Type:</label>
+        <input type="text" [(ngModel)] = "new_workout.type" id="typeValue"><br>
+        <label for="intensityValue">Intensity:</label>
+        <div ngbDropdown class="d-inline-block">
+            <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle>{{selected}}</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button ngbDropdownItem (click)="setEasy()">Beginner</button>
+              <button ngbDropdownItem (click)="setMedium()">Moderate</button>
+              <button ngbDropdownItem (click)="setHard()">Intense</button>
+            </div>
+        </div>
+        <br>
+        <button (click) = "addWorkout()">Add Workout</button>
+    </div>
+    <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="card">
+    <div class="card-body">
+      <h5 class="card-title">Account Info</h5>
+      <p class="card-text"></p>
+    </div>
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td>{{curUser.firstName}} {{curUser.lastName}}</td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td>{{curUser.email}}</td>
+      </tr>
+      <tr>
+        <td>Role:</td>
+        <td>{{curUser.role.description}}</td>
+      </tr>
+      <tr>
+        <td>Height:</td>
+        <td>{{feet}}' {{curUser.height%12}}"</td>
+      </tr>
+      <tr>
+        <td>Weight:</td>
+        <td>{{curUser.weight}} lbs</td>
+      </tr>
+    </table>
+    <div class="card-footer">
+      <small class="text-muted">Last updated 3 mins ago</small>
+    </div>
+  </div>
