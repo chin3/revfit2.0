@@ -1,12 +1,33 @@
-<p>workouttimer works!</p>
-<button (click)='startTimer()'>Start Timer</button>
-<button (click)='pauseTimer()'>Pause</button>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">RevFit</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link" role="button" (click)="toHome()"> Home <span class="sr-only">(current)</span></a>
+            </li>
+        </ul>
+    </div>
+</nav>
 
-<p>{{timeLeft}} Seconds Left....</p> 
 
-<table *ngFor="let e of currWorkout.exercises">
-    <tr>
-        <td>{{e.name}}</td>
-        <td></td>
-    </tr>
-</table>
+<div id="main">
+    <div id="btndiv" style="text-align: center;">
+
+        <button id="start" class="btn btn-primary" (click)='startTimer()'>Start Timer</button>
+
+        <button id="pause" class="btn btn-primary" (click)='pauseTimer()'>Pause</button>
+
+    </div>
+    <hr>
+    <p style="text-align: center;">{{timeLeft}} Seconds Left....</p>
+
+    <table class="table table-bordered table-striped" *ngFor="let e of currWorkout.exercises">
+        <tr>
+            <td>{{e.name}}</td>
+        </tr>
+    </table>
+</div>

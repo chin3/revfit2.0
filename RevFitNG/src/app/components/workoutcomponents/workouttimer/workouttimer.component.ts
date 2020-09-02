@@ -32,5 +32,8 @@ export class WorkouttimerComponent implements OnInit {
   pauseTimer() {
     clearInterval(this.interval);
   }
+  toHome(){
+    window.location.href="/home";
+  }
 
 }
