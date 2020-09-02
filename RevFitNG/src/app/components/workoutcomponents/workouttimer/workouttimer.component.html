@@ -23,7 +23,8 @@
 
     </div>
     <hr>
-    <p style="text-align: center;">{{timeLeft}} Seconds Left....</p>
+    <p *ngIf="!done" style="text-align: center;">{{timeLeft}} Seconds Left....</p>
+    <p *ngIf="done" style="text-align: center;">Congrats, you finished!</p>
 
     <table class="table table-striped">
         <thead>
@@ -31,10 +32,10 @@
             <th>Sets</th>
             <th>Interval Length</th>
         </thead>
-        <tr *ngFor="let e of currWorkout.exercises">
+        <tr *ngFor="let e of currWorkout.exercises; let i = index">
             <td>{{e.name}}</td>
-            <td></td>
-            <td>time</td>
+            <td>{{setsAndReps[i].sets}}</td>
+            <td>{{setsAndReps[i].time}}</td>
         </tr>
     </table>
 </div>

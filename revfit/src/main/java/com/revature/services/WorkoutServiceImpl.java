@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.revature.beans.Exercise;
 import com.revature.beans.Workout;
 import com.revature.beans.WorkoutExercise;
 import com.revature.repositories.WorkoutExerciseRepository;
@@ -21,7 +22,7 @@ public class WorkoutServiceImpl implements WorkoutService{
 	WorkoutExerciseRepository war;
 	
 	@Override
-	public Workout addWorkout(Workout w) {
+	public Workout addWorkout(Workout w) {		
 		return wr.save(w);
 	}
 
