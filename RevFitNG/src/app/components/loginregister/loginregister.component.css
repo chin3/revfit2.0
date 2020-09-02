@@ -36,6 +36,7 @@
 #background {
     background: url('../../resources/images/workoutsplash.jpeg') no-repeat center;
     background-size: cover;
-    position: center;
+    background-position: center center;
+    background-attachment: fixed;
     
 }
