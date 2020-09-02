@@ -5,6 +5,7 @@ import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Exercise } from 'src/app/model/Exercise';
 import { WorkoutExercise } from 'src/app/model/WorkoutExercise';
 
+//NOTE: gotta make sure the exercise fields aren't empty before adding another card
 @Component({
   selector: 'app-workoutgendash',
   templateUrl: './workoutgendash.component.html',
@@ -15,13 +16,14 @@ export class WorkoutgendashComponent implements OnInit {
   closeResult: string;
   constructor(private modalService: NgbModal, private workoutService: WorkoutService) { }
 
-  exercises : Exercise[]
-  reps : WorkoutExercise[]
-  times : WorkoutExercise
-  new_workout : Workout
-  new_exercise : Exercise
-  selected : string = "Beginner"
-  amountOfCards : number = 1
+  exercises : Exercise[];
+  repsAndTimes : WorkoutExercise[];
+  new_workout : Workout;
+  new_exercise : Exercise;
+  selected : string = "Beginner";
+  amountOfCards : number = 1;
+  sets : number = 1;
+  time : number = 10;
   
   counter(i: number) {
     return new Array(i);
@@ -29,12 +31,16 @@ export class WorkoutgendashComponent implements OnInit {
 
   addCard() {
     this.exercises.push(this.new_exercise);
-    console.log(this.exercises);
-    console.log()
+    
+    let newWE : WorkoutExercise;
+    newWE.exercise = this.new_exercise;
+    newWE.workout = this.new_workout;
+    newWE.sets = this.sets;
+    newWE.time = this.time;
+   
+    this.repsAndTimes.push(newWE);
     this.new_exercise = new Exercise();
-    console.log(this.exercises.length);
     this.amountOfCards += 1;
-    console.log(this.amountOfCards);
   }
 
   ngOnInit(): void {
@@ -44,7 +50,7 @@ export class WorkoutgendashComponent implements OnInit {
     this.exercises.push(this.new_exercise);
     this.new_exercise = new Exercise();
     console.log(this.amountOfCards);
-    this.reps = new Array<WorkoutExercise>();
+    this.repsAndTimes = new Array<WorkoutExercise>();
     this.new_workout.user = JSON.parse(window.sessionStorage.getItem("USER"));
   }
 
@@ -73,11 +79,18 @@ export class WorkoutgendashComponent implements OnInit {
   }
 
   addWorkout() {
-    console.log(this.new_workout);
     this.new_workout.intensity = this.selected
     this.new_workout.exercises = this.exercises
-    console.log(this.exercises);
-    this.workoutService.addWorkout(this.new_workout).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} );
+    this.workoutService.addWorkout(this.new_workout).subscribe(
+      (response)=>{
+        console.log(response)
+      },
+      (response)=>{
+        console.log("failed")
+      },
+      ()=>{ 
+        console.log("finally")
+      } );
   }
 
   setEasy() {
