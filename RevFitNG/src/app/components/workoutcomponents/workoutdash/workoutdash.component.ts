@@ -25,10 +25,12 @@ export class WorkoutdashComponent implements OnInit {
   userWorkouts: Workout[];
   user : User;
   selected : string = "Not Selected";
+  currWorkout: Workout;
 
   selectWorkout(workout){
     console.log(workout);
     this.selected = workout.name;
+    this.currWorkout=workout;
     // this.updateCurrStorage(workout);
     //
     // let check = JSON.parse(sessionStorage.getItem(CURR_WORKOUT));
@@ -37,6 +39,19 @@ export class WorkoutdashComponent implements OnInit {
     
 
   }
+
+  startWorkout(){
+    if(this.currWorkout){
+      this.updateCurrStorage(this.currWorkout);
+      console.log("Adding currentWorkout to session Storage");
+      console.log(sessionStorage.getItem(CURR_WORKOUT));
+      window.location.href="/timer";
+    }else{
+      alert("Workout not selected, please select a workout");
+    }
+    
+  }
+
   updateCurrStorage(workout){
     sessionStorage.setItem(CURR_WORKOUT,JSON.stringify(workout));
   }
