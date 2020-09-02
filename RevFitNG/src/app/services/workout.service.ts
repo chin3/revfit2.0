@@ -17,8 +17,8 @@ constructor(private http: HttpClient) { }
 getUserWorkouts(user:User){
   return this.http.post<Workout[]>('http://localhost:8080/workout/search', JSON.stringify(user),{headers: this.headers});
 }
-  addWorkout(new_workout) {
-    return this.http.post<Workout>('http://localhost:8080/workout/', JSON.stringify(new_workout),{headers: this.headers});
-  }
+addWorkout(new_workout) {
+   return this.http.post<Workout>('http://localhost:8080/workout/', JSON.stringify(new_workout),{headers: this.headers});
+ }
 
 }

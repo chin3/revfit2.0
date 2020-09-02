@@ -3,3 +3,10 @@
 <button (click)='pauseTimer()'>Pause</button>
 
 <p>{{timeLeft}} Seconds Left....</p> 
+
+<table *ngFor="let e of currWorkout.exercises">
+    <tr>
+        <td>{{e.name}}</td>
+        <td></td>
+    </tr>
+</table>
