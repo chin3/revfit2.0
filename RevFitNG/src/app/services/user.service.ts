@@ -20,4 +20,5 @@ export class UserService {
   registerUser(new_user) {
     return this.http.post<User>('http://localhost:8080/user', JSON.stringify(new_user), {headers: this.headers});
   }
+
 }
