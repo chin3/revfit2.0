@@ -24,7 +24,7 @@ public class WorkoutExerciseController {
 	WorkoutExerciseService ws;
 	
 	@PostMapping(value = "/workoutExercise", consumes = "application/json", produces = "application/json")
-	public WorkoutExercise addWorkoutExercise(@RequestBody WorkoutExercise we) {
+	public List<WorkoutExercise> addWorkoutExercise(@RequestBody List<WorkoutExercise> we) {
 		return ws.addWorkoutExercise(we);
 	}
 	

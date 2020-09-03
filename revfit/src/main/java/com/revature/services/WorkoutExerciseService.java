@@ -6,7 +6,7 @@ import com.revature.beans.WorkoutExercise;
 import com.revature.util.WorkoutExerciseId;
 
 public interface WorkoutExerciseService {
-	public WorkoutExercise addWorkoutExercise(WorkoutExercise e);
+	public List<WorkoutExercise> addWorkoutExercise(List<WorkoutExercise> wes);
 	public WorkoutExercise getWorkoutExercise(WorkoutExerciseId id);
 	public List<WorkoutExercise> getAllWorkoutExercises();
 	public List<WorkoutExercise> getAllByWorkout(int wid);
