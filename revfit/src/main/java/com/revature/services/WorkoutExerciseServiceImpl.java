@@ -18,8 +18,8 @@ public class WorkoutExerciseServiceImpl implements WorkoutExerciseService {
 
 	
 	@Override
-	public WorkoutExercise addWorkoutExercise(WorkoutExercise e) {
-		return wer.save(e);
+	public List<WorkoutExercise> addWorkoutExercise(List<WorkoutExercise> wes) {
+		return (List<WorkoutExercise>) wer.saveAll(wes);
 	}
 
 	@Override
