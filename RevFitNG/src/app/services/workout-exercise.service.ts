@@ -20,4 +20,12 @@ export class WorkoutExerciseService {
   getJoinsByWorkout(wid: number) {
     return this.http.get<WorkoutExercise[]>("http://localhost:8080/workoutExercise/"+wid, {headers: this.headers});
   }
+
+  addWorkoutExercises(array : WorkoutExercise[]) {
+    return this.http.post<WorkoutExercise[]>("http://localhost:8080/workoutExercise", array, {headers: this.headers});
+  }
+
+  updateWorkoutExercise(w : WorkoutExercise) {
+    return this.http.put<WorkoutExercise>("http://localhost:8080/workoutExercise/search", w, {headers: this.headers});
+  }
 }

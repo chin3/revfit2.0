@@ -4,6 +4,8 @@ import { Workout } from 'src/app/model/Workout';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
 import { Exercise } from 'src/app/model/Exercise';
 import { WorkoutExercise } from 'src/app/model/WorkoutExercise';
+import { WorkoutExerciseService } from 'src/app/services/workout-exercise.service';
+import { ExerciseService } from 'src/app/services/exercise.service';
 
 //NOTE: gotta make sure the exercise fields aren't empty before adding another card
 @Component({
@@ -14,45 +16,49 @@ import { WorkoutExercise } from 'src/app/model/WorkoutExercise';
 export class WorkoutgendashComponent implements OnInit {
 
   closeResult: string;
-  constructor(private modalService: NgbModal, private workoutService: WorkoutService) { }
+  constructor(private modalService: NgbModal, private workoutService: WorkoutService, private wes : WorkoutExerciseService, private es : ExerciseService) { }
 
+  dropdown : Exercise[];
   exercises : Exercise[];
   repsAndTimes : WorkoutExercise[];
   new_workout : Workout;
-  new_exercise : Exercise;
   selected : string = "Beginner";
   amountOfCards : number = 1;
-  sets : number = 1;
-  time : number = 10;
-  
+
+  ngOnInit(): void {
+
+    this.es.getAllExercises().subscribe(
+      (response) => {
+        this.dropdown = response;
+        console.log(this.dropdown);
+      }
+    );
+    this.new_workout = new Workout();
+    this.exercises = new Array<Exercise>();
+    this.exercises.push(new Exercise());
+    this.repsAndTimes = new Array<WorkoutExercise>();
+    this.repsAndTimes.push(new WorkoutExercise());
+    this.new_workout.user = JSON.parse(window.sessionStorage.getItem("USER"));
+  }
+
   counter(i: number) {
     return new Array(i);
   }
 
   addCard() {
-    this.exercises.push(this.new_exercise);
-    
-    let newWE : WorkoutExercise;
-    newWE.exercise = this.new_exercise;
-    newWE.workout = this.new_workout;
-    newWE.sets = this.sets;
-    newWE.time = this.time;
-   
-    this.repsAndTimes.push(newWE);
-    this.new_exercise = new Exercise();
+    if(this.exercises[this.amountOfCards-1].name == undefined || this.exercises[this.amountOfCards-1].muscleGroup == undefined || this.repsAndTimes[this.amountOfCards-1].sets == undefined || this.repsAndTimes[this.amountOfCards-1].time == undefined) {
+      alert("Please fill in the current exercise's information before adding more");
+      return;
+    }
+    this.exercises.push(new Exercise());  
+    this.repsAndTimes.push(new WorkoutExercise);
+    console.log(this.exercises)
+    this.repsAndTimes[this.amountOfCards-1].workout = this.new_workout;
+    this.repsAndTimes[this.amountOfCards-1].exercise = this.exercises[this.amountOfCards-1];
     this.amountOfCards += 1;
+    console.log(this.repsAndTimes);
   }
 
-  ngOnInit(): void {
-    this.new_workout = new Workout();
-    this.new_exercise = new Exercise();
-    this.exercises = new Array<Exercise>();
-    this.exercises.push(this.new_exercise);
-    this.new_exercise = new Exercise();
-    console.log(this.amountOfCards);
-    this.repsAndTimes = new Array<WorkoutExercise>();
-    this.new_workout.user = JSON.parse(window.sessionStorage.getItem("USER"));
-  }
 
   open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
@@ -72,18 +78,37 @@ export class WorkoutgendashComponent implements OnInit {
     }
   }
 
-  newExercise() {
-    this.exercises.push(this.new_exercise);
-    
-    this.new_exercise = new Exercise();
-  }
-
   addWorkout() {
+    if(this.exercises[this.amountOfCards-1].name == undefined || this.exercises[this.amountOfCards-1].muscleGroup == undefined || this.repsAndTimes[this.amountOfCards-1].sets == undefined || this.repsAndTimes[this.amountOfCards-1].time == undefined) {
+      alert("Please fill in the current exercise's information before submitting");
+      return;
+    }
     this.new_workout.intensity = this.selected
     this.new_workout.exercises = this.exercises
+
+    console.log(JSON.stringify(this.new_workout));
     this.workoutService.addWorkout(this.new_workout).subscribe(
-      (response)=>{
+      (response) => {
+
+        this.wes.getJoinsByWorkout(response.id).subscribe(
+          (response) => {
+            for(let i=0; i<response.length; i++) {
+              response[i].sets = this.repsAndTimes[i].sets;
+              response[i].time = this.repsAndTimes[i].time;
+              
+              this.wes.updateWorkoutExercise(response[i]).subscribe(
+                (response) => {
+                  console.log(response);
+                },
+                (response) => {
+                  console.log("Can you not?");
+                }
+              );
+            }
+          }
+        );
         console.log(response)
+
       },
       (response)=>{
         console.log("failed")

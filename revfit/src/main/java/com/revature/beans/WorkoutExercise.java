@@ -27,14 +27,14 @@ public class WorkoutExercise {
 	private Exercise exercise;
 	
 	@Column(columnDefinition = "NUMBER(10, 3)")
-	private double time;
-	private int sets;
+	private Double time;
+	private Integer sets;
 	
 	public WorkoutExercise() {
 		super();
 	}
 
-	public WorkoutExercise(WorkoutExerciseId id, Workout workout, Exercise exercise, double time, int sets) {
+	public WorkoutExercise(WorkoutExerciseId id, Workout workout, Exercise exercise, Double time, Integer sets) {
 		super();
 		this.id = id;
 		this.workout = workout;
@@ -43,7 +43,7 @@ public class WorkoutExercise {
 		this.sets = sets;
 	}
 
-	public WorkoutExercise(Workout workout, Exercise exercise, double time, int sets) {
+	public WorkoutExercise(Workout workout, Exercise exercise, Double time, Integer sets) {
 		super();
 		this.workout = workout;
 		this.exercise = exercise;
@@ -67,19 +67,19 @@ public class WorkoutExercise {
 		this.exercise = exercise;
 	}
 
-	public double getTime() {
+	public Double getTime() {
 		return time;
 	}
 
-	public void setTime(double time) {
+	public void setTime(Double time) {
 		this.time = time;
 	}
 
-	public int getSets() {
+	public Integer getSets() {
 		return sets;
 	}
 
-	public void setSets(int sets) {
+	public void setSets(Integer sets) {
 		this.sets = sets;
 	}
 

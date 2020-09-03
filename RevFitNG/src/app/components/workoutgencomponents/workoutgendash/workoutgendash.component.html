@@ -13,22 +13,18 @@
                     <table>
                         <tr *ngFor="let in of counter(amountOfCards); let i = index">
                             <td>
+                                Exercise {{i+1}}<br>
                                 <div class="card" style="width: 18rem;">
-                                    <div class="card-body">
-                                        <label for="orangeForm-name">Exercise {{i}}</label>
-                                        <input type="text" id="orangeForm-name" class="form-control"
-                                            [(ngModel)]="exercises[i].name">
-                                    </div>
 
-                                    <label for="orangeForm-mGroup">Muscle Group</label>
-                                    <input type="text" id="orangeForm-mGroup" class="form-control"
-                                        [(ngModel)]="exercises[i].muscleGroup">
+                                    <select [(ngModel)]="exercises[i]">
+                                        <option *ngFor="let e of dropdown" [ngValue]="e">{{e.name}} - {{e.muscleGroup}}</option>
+                                    </select>
 
                                     <label for="orangeForm-sets">Sets</label>
-                                    <input type="number" class="form-control" [(ngModel)]="sets">
-                                    
+                                    <input type="number" min="1" class="form-control" [(ngModel)]="repsAndTimes[i].sets">
+
                                     <label for="orangeForm-time">Time</label>
-                                    <input type="number" class="form-control" [(ngModel)]="time">
+                                    <input type="number" min="5" class="form-control" [(ngModel)]="repsAndTimes[i].time">
                                 </div>
                             </td>
                         </tr>
