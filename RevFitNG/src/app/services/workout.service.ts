@@ -28,4 +28,7 @@ export class WorkoutService {
     return this.http.get<number>('http://localhost:8080/workout/'+id+'/time', {headers:this.headers});
   }
 
+  deleteWorkout(id : number) {
+    return this.http.delete<Workout>('http://localhost:8080/workout/'+id, {headers:this.headers})
+  }
 }

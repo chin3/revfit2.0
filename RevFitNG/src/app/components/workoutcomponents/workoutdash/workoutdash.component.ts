@@ -24,7 +24,7 @@ export class WorkoutdashComponent implements OnInit {
   }
   userWorkouts: Workout[];
   user : User;
-  selected : string = "Not Selected";
+  selected : string = "";
   currWorkout: Workout;
 
   selectWorkout(workout){
@@ -71,6 +71,19 @@ export class WorkoutdashComponent implements OnInit {
     
   }
 
+  deleteWorkout() {
+    this.workoutService.deleteWorkout(this.currWorkout.id).subscribe(
+      (response) => {
+        console.log("success delete");
+      },
+      (response)=>{console.log('failed');},
+      ()=>{
+        console.log('Woop');
+      }
+    );
+    this.userWorkouts = this.userWorkouts.filter(Workout => Workout !== this.currWorkout);
+    this.selected = "";
+  }
 
 
 

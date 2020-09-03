@@ -108,10 +108,12 @@ export class WorkoutgendashComponent implements OnInit {
           }
         );
         console.log(response)
+        alert("Workout Successfully Added. Check in My Workouts Tab.");
 
       },
       (response)=>{
         console.log("failed")
+        alert("Add Workout failed. Try again.");
       },
       ()=>{ 
         console.log("finally")
@@ -128,5 +130,17 @@ export class WorkoutgendashComponent implements OnInit {
 
   setHard() {
     this.selected = "Intense";
+  }
+
+  deleteMostRecentCard() {
+     if (this.amountOfCards < 2) {
+       alert("too few exercises to delete");
+       return;
+     }
+     this.exercises.splice(-1,1);
+     this.repsAndTimes.splice(-1,1);
+     console.log(this.amountOfCards);
+     this.amountOfCards-=1
+     console.log(this.amountOfCards);
   }
 }
