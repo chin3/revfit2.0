@@ -37,6 +37,7 @@ public class ExerciseController {
 	@GetMapping(value = "/exercise")
 	public List<Exercise> getAllExercises() {
 		return es.getAllExercises();
+		
 	}
 	
 	@GetMapping(value = "/exercise/search/{id}")

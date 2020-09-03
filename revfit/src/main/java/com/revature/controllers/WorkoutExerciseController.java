@@ -44,8 +44,7 @@ public class WorkoutExerciseController {
 	}
 	
 	@PutMapping(value = "/workoutExercise/search", produces = "application/json")
-	public WorkoutExercise updateWorkout(@RequestParam(name = "workout_id") int workout_id, @RequestParam(name = "exercise_id") int exercise_id, @RequestBody WorkoutExercise change) {
-		change.setId(new WorkoutExerciseId(workout_id, exercise_id));
+	public WorkoutExercise updateWorkout(@RequestBody WorkoutExercise change) {
 		return ws.updateWorkoutExercise(change);
 	}
 
