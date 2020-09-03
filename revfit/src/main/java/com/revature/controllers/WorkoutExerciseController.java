@@ -49,8 +49,8 @@ public class WorkoutExerciseController {
 	}
 
 	@DeleteMapping(value = "/workoutExercise/search")
-	public boolean deleteWorkoutExercise(@RequestParam(name = "workout_id") int workout_id, @RequestParam(name = "exercise_id") int exercise_id) {
-		return ws.deleteWorkoutExercise(ws.getWorkoutExercise(new WorkoutExerciseId(workout_id, exercise_id)));
+	public boolean deleteWorkoutExercise(@RequestBody WorkoutExercise w) {
+		return ws.deleteWorkoutExercise(ws.getWorkoutExercise(w.getId()));
 	}
 
 }
