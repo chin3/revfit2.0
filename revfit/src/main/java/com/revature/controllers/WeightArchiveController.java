@@ -19,19 +19,19 @@ public class WeightArchiveController {
 	@Autowired
 	WeightArchiveService ws;
 	
-	@GetMapping(value = "/weightArchive") 
-	public WeightArchive getWeightArchive(@PathVariable int id){
+	@GetMapping(value = "/weightArchive/{id}") 
+	public WeightArchive getWeightArchive(@PathVariable("id") int id){
 		return ws.getWeightArchive(id);
 	}
 	
 	@PutMapping(value = "/weightArchive/{id}")
-	public WeightArchive updateWeightArchive(@RequestBody WeightArchive change, @PathVariable int id) {
+	public WeightArchive updateWeightArchive(@RequestBody WeightArchive change, @PathVariable("id") int id) {
 		change.setId(id);
 		return ws.updateWeightArchive(change);
 	}
 	
 	@DeleteMapping(value = "/weightArchive/{id}")
-	public boolean deleteWeightArchive(@RequestBody WeightArchive wa, @PathVariable int id) {
+	public boolean deleteWeightArchive(@RequestBody WeightArchive wa, @PathVariable("id") int id) {
 		wa.setId(id);
 		return ws.deleteWeightArchive(wa);
 	}
