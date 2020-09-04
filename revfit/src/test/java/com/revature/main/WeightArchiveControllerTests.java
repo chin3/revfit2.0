@@ -22,7 +22,7 @@ import com.revature.services.WeightArchiveService;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-class RevFitApplicationTests {
+class WeightArchiveControllerTests {
 
 	@Autowired
 	MockMvc mockMVC;

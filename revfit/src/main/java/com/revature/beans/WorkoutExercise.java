@@ -23,7 +23,6 @@ public class WorkoutExercise {
 	
 	@ManyToOne
 	@JoinColumn(name = "exercise_id", insertable = false, updatable = false)
-
 	private Exercise exercise;
 	
 	@Column(columnDefinition = "NUMBER(10, 3)")

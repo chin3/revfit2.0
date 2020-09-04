@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Permission;
 import com.revature.services.PermissionService;
 
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
+@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com/")
 @RestController
 public class PermissionController {
 
@@ -37,16 +36,6 @@ public class PermissionController {
 	@GetMapping(value = "Permission/{id}")
 	public Permission getPermission(@PathVariable("id") int id) {
 		return ps.getPermission(id);
-	}
-	
-	@GetMapping(value = "/Permission/search")
-	public Permission findPermission(@RequestParam(required = false) String name) {
-		
-		if(name != null) {
-			return ps.getPermissionByName(name);
-		}
-		
-		return null;
 	}
 	
 	@PutMapping(value = "/Permission/{id}", consumes = "application/json")

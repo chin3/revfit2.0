@@ -11,13 +11,12 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.revature.beans.Role;
 import com.revature.services.RoleService;
 
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
+@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com/")
 @RestController
 public class RoleController {
 	
@@ -38,17 +37,7 @@ public class RoleController {
 	public Role getRole(@PathVariable("id") int id) {
 		return rs.getRole(id);
 	}
-	
-	@GetMapping(value = "/Role/search")
-	public Role findRole(@RequestParam(required = false) String name) {
 		
-		if(name != null) {
-			return rs.findByName(name);
-		}
-		
-		return null;
-	}
-	
 	@PutMapping(value = "/Role/{id}", consumes = "application/json")
 	public Role updateRole(@PathVariable("id") int id, @RequestBody Role change) {
 		change.setId(id);

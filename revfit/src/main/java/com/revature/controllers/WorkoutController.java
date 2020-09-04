@@ -18,7 +18,7 @@ import com.revature.beans.User;
 import com.revature.beans.Workout;
 import com.revature.services.WorkoutService;
 
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
+@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com/")
 @RestController
 public class WorkoutController {
 
@@ -31,10 +31,7 @@ public class WorkoutController {
 	}
 
 	@GetMapping(value = "/workout/{idOrIntensity}", produces = "application/json")
-	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity", required = false) String idOrIntensity) {
-		if (idOrIntensity == null) {
-			return null;
-		}
+	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity") String idOrIntensity) {
 		try {
 			int id = Integer.parseInt(idOrIntensity);
 			return new ArrayList<Workout>(Arrays.asList(ws.getWorkout(id)));
