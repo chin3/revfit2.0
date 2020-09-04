@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.beans.Permission;
 import com.revature.services.PermissionService;
 
-@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com/")
+@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
 @RestController
 public class PermissionController {
 
