@@ -38,17 +38,7 @@ public class RoleController {
 	public Role getRole(@PathVariable("id") int id) {
 		return rs.getRole(id);
 	}
-	
-	@GetMapping(value = "/Role/search")
-	public Role findRole(@RequestParam(required = false) String name) {
 		
-		if(name != null) {
-			return rs.findByName(name);
-		}
-		
-		return null;
-	}
-	
 	@PutMapping(value = "/Role/{id}", consumes = "application/json")
 	public Role updateRole(@PathVariable("id") int id, @RequestBody Role change) {
 		change.setId(id);

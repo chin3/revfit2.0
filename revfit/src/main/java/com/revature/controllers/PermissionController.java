@@ -39,16 +39,6 @@ public class PermissionController {
 		return ps.getPermission(id);
 	}
 	
-	@GetMapping(value = "/Permission/search")
-	public Permission findPermission(@RequestParam(required = false) String name) {
-		
-		if(name != null) {
-			return ps.getPermissionByName(name);
-		}
-		
-		return null;
-	}
-	
 	@PutMapping(value = "/Permission/{id}", consumes = "application/json")
 	public Permission updatePermission(@PathVariable("id") int id, @RequestBody Permission change) {
 		change.setId(id);
