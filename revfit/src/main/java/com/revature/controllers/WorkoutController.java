@@ -31,7 +31,10 @@ public class WorkoutController {
 	}
 
 	@GetMapping(value = "/workout/{idOrIntensity}", produces = "application/json")
-	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity") String idOrIntensity) {
+	public List<Workout> getWorkout(@PathVariable(name = "idOrIntensity", required = false) String idOrIntensity) {
+		if (idOrIntensity == null) {
+			return null;
+		}
 		try {
 			int id = Integer.parseInt(idOrIntensity);
 			return new ArrayList<Workout>(Arrays.asList(ws.getWorkout(id)));
