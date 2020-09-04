@@ -9,7 +9,7 @@ import { User } from '../model/User';
 export class WorkoutService {
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': 'http://localhost:4200',
+    'Access-Control-Allow-Origin': 'http://revfitbucket.s3-website.us-east-2.amazonaws.com/',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
     'Access-Control-Allow-Credentials': 'true'
   });
@@ -17,18 +17,18 @@ export class WorkoutService {
   constructor(private http: HttpClient) { }
 
   getUserWorkouts(user: User) {
-    return this.http.post<Workout[]>('http://localhost:8080/workout/search', JSON.stringify(user), { headers: this.headers });
+    return this.http.post<Workout[]>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/workout/search', JSON.stringify(user), { headers: this.headers });
   }
   
   addWorkout(new_workout) {
-    return this.http.post<Workout>('http://localhost:8080/workout/', JSON.stringify(new_workout), { headers: this.headers });
+    return this.http.post<Workout>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/workout/', JSON.stringify(new_workout), { headers: this.headers });
   }
 
   getWorkoutTime(id : number) {
-    return this.http.get<number>('http://localhost:8080/workout/'+id+'/time', {headers:this.headers});
+    return this.http.get<number>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/workout/'+id+'/time', {headers:this.headers});
   }
 
   deleteWorkout(id : number) {
-    return this.http.delete<Workout>('http://localhost:8080/workout/'+id, {headers:this.headers})
+    return this.http.delete<Workout>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/workout/'+id, {headers:this.headers})
   }
 }
