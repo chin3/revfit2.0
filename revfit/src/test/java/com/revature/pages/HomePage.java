@@ -12,6 +12,9 @@ public class HomePage {
 	@FindBy(xpath = "//*[@id=\"navbarNavDropdown\"]/ul/li[3]/a")
 	private WebElement myWorkoutsAnchor;
 	
+	@FindBy(xpath = "/html/body/app-root/app-home/nav/div/ul/li[1]/a")
+	private WebElement homeAnchor;
+	
 	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
@@ -22,5 +25,8 @@ public class HomePage {
 	
 	public void goToMyWorkoutsPage() {
 		myWorkoutsAnchor.click();
+	}
+	public void goHome() {
+		homeAnchor.click();
 	}
 }

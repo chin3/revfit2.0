@@ -1,0 +1,12 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name = "RevFitNG Test">
+
+    <test name = "HomePageTest">
+        <classes>
+            <class name = "com.revature.selenium.HomePageTests"></class>
+            <class name = "com.revature.selenium.LoginTest"></class>
+        </classes>
+    </test>
+
+</suite>

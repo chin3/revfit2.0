@@ -1,29 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" total="1" passed="1">
+<testng-results skipped="0" failed="0" total="4" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="20071" started-at="2020-09-05T19:35:44Z" finished-at="2020-09-05T19:36:05Z">
+  <suite name="RevFitNG Test" duration-ms="6169" started-at="2020-09-05T20:26:29Z" finished-at="2020-09-05T20:26:35Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="20071" started-at="2020-09-05T19:35:44Z" finished-at="2020-09-05T19:36:05Z">
-      <class name="com.revature.selenium.MyWorkoutsTests">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="setUp" is-config="true" duration-ms="3281" started-at="2020-09-05T15:35:41Z" finished-at="2020-09-05T15:35:44Z">
+    <test name="HomePageTest" duration-ms="6169" started-at="2020-09-05T20:26:29Z" finished-at="2020-09-05T20:26:35Z">
+      <class name="com.revature.selenium.HomePageTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="setUp" is-config="true" duration-ms="3937" started-at="2020-09-05T15:26:22Z" finished-at="2020-09-05T15:26:26Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="goToMyWorkouts()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="goToMyWorkouts" is-config="true" duration-ms="20015" started-at="2020-09-05T15:35:44Z" finished-at="2020-09-05T15:36:04Z">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.revature.selenium.LoginTest@3e9b1010]" name="setUp" is-config="true" duration-ms="3134" started-at="2020-09-05T15:26:26Z" finished-at="2020-09-05T15:26:29Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- goToMyWorkouts -->
-        <test-method status="PASS" signature="onMyWorkoutsPage()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="onMyWorkoutsPage" duration-ms="48" started-at="2020-09-05T15:36:04Z" finished-at="2020-09-05T15:36:05Z">
+        </test-method> <!-- setUp -->
+        <test-method status="PASS" signature="login()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="login" is-config="true" duration-ms="3890" started-at="2020-09-05T15:26:29Z" finished-at="2020-09-05T15:26:33Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="openLoginPage()[pri:0, instance:com.revature.selenium.LoginTest@3e9b1010]" name="openLoginPage" is-config="true" duration-ms="1449" started-at="2020-09-05T15:26:33Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- openLoginPage -->
+        <test-method status="PASS" signature="returnHome()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="returnHome" is-config="true" duration-ms="68" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnHome -->
+        <test-method status="PASS" signature="onHomePage()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="onHomePage" duration-ms="37" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- onHomePage -->
+        <test-method status="PASS" signature="returnHome()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="returnHome" is-config="true" duration-ms="50" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnHome -->
+        <test-method status="PASS" signature="onMyWorkoutsPage()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="onMyWorkoutsPage" duration-ms="74" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- onMyWorkoutsPage -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="tearDown" is-config="true" duration-ms="600" started-at="2020-09-05T15:36:05Z" finished-at="2020-09-05T15:36:05Z">
+        <test-method status="PASS" signature="returnHome()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="returnHome" is-config="true" duration-ms="34" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- returnHome -->
+        <test-method status="PASS" signature="workoutGenPage()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="workoutGenPage" duration-ms="78" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- workoutGenPage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.revature.selenium.HomePageTests@18eed359]" name="tearDown" is-config="true" duration-ms="615" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:36Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.revature.selenium.MyWorkoutsTests -->
-    </test> <!-- Default test -->
-  </suite> <!-- Default suite -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.revature.selenium.LoginTest@3e9b1010]" name="tearDown" is-config="true" duration-ms="592" started-at="2020-09-05T15:26:36Z" finished-at="2020-09-05T15:26:37Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.revature.selenium.HomePageTests -->
+      <class name="com.revature.selenium.LoginTest">
+        <test-method status="PASS" signature="loginPage()[pri:0, instance:com.revature.selenium.LoginTest@3e9b1010]" name="loginPage" duration-ms="472" started-at="2020-09-05T15:26:35Z" finished-at="2020-09-05T15:26:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginPage -->
+      </class> <!-- com.revature.selenium.LoginTest -->
+    </test> <!-- HomePageTest -->
+  </suite> <!-- RevFitNG Test -->
 </testng-results>
