@@ -2,28 +2,28 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="3697" started-at="2020-09-05T19:10:08Z" finished-at="2020-09-05T19:10:12Z">
+  <suite name="Default suite" duration-ms="20071" started-at="2020-09-05T19:35:44Z" finished-at="2020-09-05T19:36:05Z">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="3697" started-at="2020-09-05T19:10:08Z" finished-at="2020-09-05T19:10:12Z">
-      <class name="com.revature.selenium.LoginTest">
-        <test-method status="PASS" signature="setUp()[pri:0, instance:com.revature.selenium.LoginTest@1725dc0f]" name="setUp" is-config="true" duration-ms="3299" started-at="2020-09-05T15:10:05Z" finished-at="2020-09-05T15:10:08Z">
+    <test name="Default test" duration-ms="20071" started-at="2020-09-05T19:35:44Z" finished-at="2020-09-05T19:36:05Z">
+      <class name="com.revature.selenium.MyWorkoutsTests">
+        <test-method status="PASS" signature="setUp()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="setUp" is-config="true" duration-ms="3281" started-at="2020-09-05T15:35:41Z" finished-at="2020-09-05T15:35:44Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method status="PASS" signature="openLoginPage()[pri:0, instance:com.revature.selenium.LoginTest@1725dc0f]" name="openLoginPage" is-config="true" duration-ms="3121" started-at="2020-09-05T15:10:08Z" finished-at="2020-09-05T15:10:11Z">
+        <test-method status="PASS" signature="goToMyWorkouts()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="goToMyWorkouts" is-config="true" duration-ms="20015" started-at="2020-09-05T15:35:44Z" finished-at="2020-09-05T15:36:04Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- openLoginPage -->
-        <test-method status="PASS" signature="loginPage()[pri:0, instance:com.revature.selenium.LoginTest@1725dc0f]" name="loginPage" duration-ms="569" started-at="2020-09-05T15:10:11Z" finished-at="2020-09-05T15:10:12Z">
+        </test-method> <!-- goToMyWorkouts -->
+        <test-method status="PASS" signature="onMyWorkoutsPage()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="onMyWorkoutsPage" duration-ms="48" started-at="2020-09-05T15:36:04Z" finished-at="2020-09-05T15:36:05Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginPage -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.revature.selenium.LoginTest@1725dc0f]" name="tearDown" is-config="true" duration-ms="623" started-at="2020-09-05T15:10:12Z" finished-at="2020-09-05T15:10:12Z">
+        </test-method> <!-- onMyWorkoutsPage -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.revature.selenium.MyWorkoutsTests@1817d444]" name="tearDown" is-config="true" duration-ms="600" started-at="2020-09-05T15:36:05Z" finished-at="2020-09-05T15:36:05Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- com.revature.selenium.LoginTest -->
+      </class> <!-- com.revature.selenium.MyWorkoutsTests -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
