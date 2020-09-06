@@ -5,6 +5,7 @@
     <classes>
       <class name="com.revature.selenium.HomePageTests"/>
       <class name="com.revature.selenium.LoginTest"/>
+      <class name="com.revature.selenium.MyWorkoutsTests"/>
     </classes>
   </test> <!-- HomePageTest -->
 </suite> <!-- Failed suite [RevFitNG Test] -->

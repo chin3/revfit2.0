@@ -6,6 +6,7 @@
         <classes>
             <class name = "com.revature.selenium.HomePageTests"></class>
             <class name = "com.revature.selenium.LoginTest"></class>
+            <class name = "com.revature.selenium.MyWorkoutsTests"></class>
         </classes>
     </test>
 
