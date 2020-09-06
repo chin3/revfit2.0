@@ -17,7 +17,7 @@ import com.revature.services.WorkoutExerciseService;
 import com.revature.util.WorkoutExerciseId;
 
 //@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:8080")
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
 @RestController
 public class WorkoutExerciseController {
 	@Autowired

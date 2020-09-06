@@ -13,7 +13,7 @@ import com.revature.beans.WeightArchive;
 import com.revature.services.WeightArchiveService;
 
 //@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:8080")
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
 @RestController
 public class WeightArchiveController {
 
