@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.revature.beans.Role;
 import com.revature.services.RoleService;
 
-//@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
-@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
+@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
+//@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
 @RestController
 public class RoleController {
 	
