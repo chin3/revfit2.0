@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">4 methods,   4 passed</span>
+                    <span class="method-stats">5 methods,   5 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -100,6 +100,11 @@
                       <a href="#" panel-name="suite-RevFitNG_Test" class="show-methods passed suite-RevFitNG_Test"> (show)</a> <!-- show-methods passed suite-RevFitNG_Test -->
                     </span>
                     <div class="method-list-content passed suite-RevFitNG_Test">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-RevFitNG_Test" title="com.revature.selenium.GenerateWorkoutTest" hash-for-method="generateWorkout">generateWorkout</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
                       <span>
                         <img width="3%" src="passed.png"/>
                         <a href="#" class="method navigator-link" panel-name="suite-RevFitNG_Test" title="com.revature.selenium.LoginTest" hash-for-method="loginPage">loginPage</a> <!-- method navigator-link -->
@@ -176,6 +181,21 @@
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
           </div> <!-- suite-RevFitNG_Test-class-passed -->
+          <div class="suite-RevFitNG_Test-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.revature.selenium.GenerateWorkoutTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="generateWorkout">
+                  </a> <!-- generateWorkout -->
+                  <span class="method-name">generateWorkout</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-RevFitNG_Test-class-passed -->
         </div> <!-- panel RevFitNG_Test -->
         <div panel-name="test-xml-RevFitNG_Test" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -190,6 +210,7 @@
     &lt;classes&gt;
       &lt;class name=&quot;com.revature.selenium.HomePageTests&quot;/&gt;
       &lt;class name=&quot;com.revature.selenium.LoginTest&quot;/&gt;
+      &lt;class name=&quot;com.revature.selenium.GenerateWorkoutTest&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- HomePageTest --&gt;
 &lt;/suite&gt; &lt;!-- RevFitNG Test --&gt;
@@ -203,7 +224,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">HomePageTest (2 classes)</span>
+                <span class="test-name">HomePageTest (3 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -229,28 +250,32 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(4);
+data.addRows(5);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'loginPage')
-data.setCell(0, 2, 'com.revature.selenium.LoginTest')
-data.setCell(0, 3, 472);
+data.setCell(0, 1, 'generateWorkout')
+data.setCell(0, 2, 'com.revature.selenium.GenerateWorkoutTest')
+data.setCell(0, 3, 2999);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'workoutGenPage')
-data.setCell(1, 2, 'com.revature.selenium.HomePageTests')
-data.setCell(1, 3, 78);
+data.setCell(1, 1, 'loginPage')
+data.setCell(1, 2, 'com.revature.selenium.LoginTest')
+data.setCell(1, 3, 509);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'onMyWorkoutsPage')
 data.setCell(2, 2, 'com.revature.selenium.HomePageTests')
-data.setCell(2, 3, 74);
+data.setCell(2, 3, 80);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'onHomePage')
+data.setCell(3, 1, 'workoutGenPage')
 data.setCell(3, 2, 'com.revature.selenium.HomePageTests')
-data.setCell(3, 3, 37);
+data.setCell(3, 3, 76);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'onHomePage')
+data.setCell(4, 2, 'com.revature.selenium.HomePageTests')
+data.setCell(4, 3, 43);
 window.suiteTableData['RevFitNG_Test']= { tableData: data, tableDiv: 'times-div-RevFitNG_Test'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 661 ms</span>
+              <span class="suite-total-time">Total running time: 3 seconds</span>
               <div id="times-div-RevFitNG_Test">
               </div> <!-- times-div-RevFitNG_Test -->
             </div> <!-- times-div -->
@@ -276,79 +301,104 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.revature.selenium.HomePageTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.revature.selenium.GenerateWorkoutTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setUp</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-suite before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.selenium.HomePageTests</div> <!-- chronological-class-name -->
+              <div class="configuration-suite before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">3966 ms</span>
+              </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">3937 ms</span>
+                <span class="method-start">7043 ms</span>
               </div> <!-- configuration-suite before -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.selenium.GenerateWorkoutTest</div> <!-- chronological-class-name -->
+              <div class="configuration-test before">
+                <span class="method-name">openLoginPage</span>
+                <span class="method-start">10189 ms</span>
+              </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.HomePageTests</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">login</span>
-                <span class="method-start">7073 ms</span>
+                <span class="method-start">14146 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">openLoginPage</span>
-                <span class="method-start">10963 ms</span>
+                <span class="method-start">18015 ms</span>
               </div> <!-- configuration-test before -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.HomePageTests</div> <!-- chronological-class-name -->
               <div class="configuration-method before">
                 <span class="method-name">returnHome</span>
-                <span class="method-start">12421 ms</span>
+                <span class="method-start">19524 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">onHomePage</span>
-                <span class="method-start">12489 ms</span>
+                <span class="method-start">19594 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">returnHome</span>
-                <span class="method-start">12528 ms</span>
+                <span class="method-start">19639 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">onMyWorkoutsPage</span>
-                <span class="method-start">12578 ms</span>
+                <span class="method-start">19690 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">returnHome</span>
-                <span class="method-start">12653 ms</span>
+                <span class="method-start">19771 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">workoutGenPage</span>
-                <span class="method-start">12687 ms</span>
+                <span class="method-start">19806 ms</span>
               </div> <!-- test-method -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.LoginTest</div> <!-- chronological-class-name -->
               <div class="test-method">
                 <span class="method-name">loginPage</span>
-                <span class="method-start">12767 ms</span>
+                <span class="method-start">19884 ms</span>
               </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.revature.selenium.GenerateWorkoutTest</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">generateWorkout</span>
+                <span class="method-start">20395 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-suite after">
+                <span class="method-name">tearDown</span>
+                <span class="method-start">23410 ms</span>
+              </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.HomePageTests</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">13261 ms</span>
+                <span class="method-start">24010 ms</span>
               </div> <!-- configuration-suite after -->
             </div> <!-- chronological-class -->
             <div class="chronological-class">
               <div class="chronological-class-name">com.revature.selenium.LoginTest</div> <!-- chronological-class-name -->
               <div class="configuration-suite after">
                 <span class="method-name">tearDown</span>
-                <span class="method-start">13876 ms</span>
+                <span class="method-start">24605 ms</span>
               </div> <!-- configuration-suite after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
