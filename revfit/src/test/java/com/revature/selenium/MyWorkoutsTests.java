@@ -23,7 +23,7 @@ public class MyWorkoutsTests {
 	@BeforeSuite
 	public void setUp() {
 
-		File file = new File("D:\\Program Files\\Selenium\\chromedriver.exe");
+		File file = new File("src/test/resources/chromedriver.exe");
 		System.setProperty("webdriver.chrome.driver", file.getAbsolutePath());
 
 		driver = new ChromeDriver();
