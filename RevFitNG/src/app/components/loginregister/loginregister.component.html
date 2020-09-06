@@ -6,57 +6,59 @@
 			<span aria-hidden="true">×</span>
 		  </button>
 		</div>
+		<form (submit)="event.preventDefault()">
 		<div class="modal-body">
 			<div class="modal-body mx-3">
 				<div class="md-form mb-4">
 					<label for="orangeForm-name">Your username</label>
-					<input type="text" id="orangeForm-name" class="form-control" [(ngModel)] = "new_user.username">
+					<input type="text" id="orangeForm-name" name="username" class="form-control" [(ngModel)] = "new_user.username" required>
 				</div>
 				<div class="md-form mb-4">
 
 					<div class="md-form mb-4">
 						<label for="orangeForm-first">First Name</label>
-						<input type="text" id="orangeForm-first" class="form-control" [(ngModel)] = "new_user.firstName">
+						<input type="text" id="orangeForm-first" name="firstName" class="form-control" [(ngModel)] = "new_user.firstName" required>
 						
 					  </div>
 
 					  <div class="md-form mb-4">
 						<label for="orangeForm-last">Last Name</label>
-						<input type="text" id="orangeForm-last" class="form-control" [(ngModel)] = "new_user.lastName">
+						<input type="text" id="orangeForm-last" name="lastName" class="form-control" [(ngModel)] = "new_user.lastName" required>
 						
 					  </div>
 				  <label for="orangeForm-email">Your email</label>
-				  <input type="email" id="orangeForm-email" class="form-control" [(ngModel)] = "new_user.email">
+				  <input type="email" id="orangeForm-email" name="email" class="form-control" [(ngModel)] = "new_user.email" required>
 				  
 				</div>
 		
 				<div class="md-form mb-4">
 				  <label for="orangeForm-pass">Your password</label>
-				  <input type="password" id="orangeForm-pass" class="form-control" [(ngModel)] = "new_user.password">
+				  <input type="password" id="orangeForm-pass" name="password" class="form-control" [(ngModel)] = "new_user.password" required>
 				  
 				</div>
 				<div class="md-form mb-4">
 					<label for="orangeForm-pass">Re-type password</label>
-					<input type="password" id="orangeForm-pass" class="form-control">
-					
+					<input type="password" id="orangeForm-pass" name="password1" class="form-control" (change)="validatePassword()" [(ngModel)] = "second_password" required>
+					<p *ngIf= "!passwordMismatch"> Please enter matching passwords</p>
 				</div>
 				<div class="md-form mb-4">
 					<label for="orangeForm-weight">Weight (lbs)</label>
-					<input type="number" id="orangeForm-weight" class="form-control" [(ngModel)] = "new_user.weight">
-					
+					<input type="number" id="orangeForm-weight" name="weight" class="form-control" [(ngModel)] = "new_user.weight" required>
 				</div>
 
 				<div class="md-form mb-4">
 					<label for="orangeForm-height">Height (inches)</label>
-					<input type="number" id="orangeForm-height" class="form-control" [(ngModel)] = "new_user.height">
+					<input type="number" id="orangeForm-height" name="height" class="form-control" [(ngModel)] = "new_user.height" required>
 				</div>
 
 			  </div>
 
 		</div>
 		<div class="modal-footer">
-		  <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click'); register()">Submit</button>
+		<p *ngIf= "formInvalid">Form has invalid information</p>
+		  <button type="submit" name="submitBtn" class="btn btn-outline-dark" (click)="register()">Submit</button>
 		</div>
+		</form>
 	  </ng-template>
 	
 	  <style>

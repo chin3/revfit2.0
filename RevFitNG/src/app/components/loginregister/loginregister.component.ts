@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
+import {NgbModal, ModalDismissReasons, NgbModalRef} from '@ng-bootstrap/ng-bootstrap';
 import {UserService} from '../../services/user.service';
 import { User } from 'src/app/model/User';
 import { Role } from 'src/app/model/Role';
@@ -16,17 +16,22 @@ export class LoginregisterComponent implements OnInit {
   
   username: string;
   password: string;
+  second_password: string;
+  passwordMismatch: boolean = true;
+  formInvalid: boolean = false;
+  modalReference: NgbModalRef;
 
   new_user: User;
   default_role: Role;
 
   open(content) {
-    this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
+    this.modalReference = this.modalService.open(content);
+    this.modalReference.result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
       this.closeResult = `Dismissed ${this.getDismissReason(reason)}`;
     });
-  }
+    }
 
   private getDismissReason(reason: any): string {
     if (reason === ModalDismissReasons.ESC) {
@@ -60,7 +65,8 @@ export class LoginregisterComponent implements OnInit {
   register() {
     console.log(this.new_user);
     this.new_user.role = this.default_role;
-    this.userService.registerUser(this.new_user).subscribe((response)=>{console.log(response)},(response)=>{console.log("failed")},()=>{ console.log("finally")} );
+    this.userService.registerUser(this.new_user).subscribe((response)=>{console.log(response); this.modalReference.close(); this.formInvalid=false; this.new_user = new User(); this.second_password = ""},
+              (response)=>{console.log("failed"); this.formInvalid=true},()=>{ console.log("finally")} );
   }
 
   ngOnInit(): void {
@@ -71,4 +77,13 @@ export class LoginregisterComponent implements OnInit {
     this.default_role.description = 'Standard User';
   }
 
+  validatePassword(){
+    if (this.new_user.password != this.second_password){
+      this.passwordMismatch = false;
+    }
+
+    else {
+      this.passwordMismatch = true;
+    }
+  }
 }
