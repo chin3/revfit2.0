@@ -9,7 +9,8 @@ import { User } from '../model/User';
 export class WorkoutService {
   private headers = new HttpHeaders({
     'Content-Type': 'application/json',
-    'Access-Control-Allow-Origin': 'http://revfitbucket.s3-website.us-east-2.amazonaws.com/',
+    'Access-Control-Allow-Origin': 'http://localhost:4200',
+    //'Access-Control-Allow-Origin': 'http://revfitbucket.s3-website.us-east-2.amazonaws.com/',
     'Access-Control-Allow-Methods': 'GET, POST, OPTIONS, PUT, PATCH, DELETE',
     'Access-Control-Allow-Credentials': 'true'
   });

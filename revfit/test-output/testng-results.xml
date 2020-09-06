@@ -66,6 +66,7 @@
           </reporter-output>
         </test-method> <!-- tearDown -->
         <test-method status="PASS" signature="tearDown()[pri:0, instance:com.revature.selenium.HomePageTests@3e9b1010]" name="tearDown" is-config="true" duration-ms="595" started-at="2020-09-06T14:30:59Z" finished-at="2020-09-06T14:31:00Z">
+
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
@@ -75,7 +76,9 @@
         </test-method> <!-- tearDown -->
       </class> <!-- com.revature.selenium.GenerateWorkoutTest -->
       <class name="com.revature.selenium.LoginTest">
-        <test-method status="PASS" signature="loginPage()[pri:0, instance:com.revature.selenium.LoginTest@6c3708b3]" name="loginPage" duration-ms="509" started-at="2020-09-06T14:30:55Z" finished-at="2020-09-06T14:30:55Z">
+
+        <test-method status="PASS" signature="loginPage()[pri:0, instance:com.revature.selenium.LoginTest@6c3708b3]" name="loginPage" duration-ms="501" started-at="2020-09-06T15:00:10Z" finished-at="2020-09-06T15:00:11Z">
+
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginPage -->

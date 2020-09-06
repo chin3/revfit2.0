@@ -13,6 +13,12 @@ export class HomeComponent implements OnInit {
 
   //User
   u: User;
+  
+  home: string = "nav-item active";
+  gen: string = "nav-item";
+  workout: string = "nav-item";
+
+
   ngOnInit(): void {
     let user = sessionStorage.getItem(STORAGE_KEY);
     if (user == null) {
@@ -43,6 +49,10 @@ export class HomeComponent implements OnInit {
       this.isworkouts = false;
       this.isleftworkouts = false;
     }
+
+    this.home = "nav-item active";
+    this.gen = "nav-item";
+    this.workout = "nav-item";
   }
 
   toWorkoutGenerator() {
@@ -54,6 +64,10 @@ export class HomeComponent implements OnInit {
       this.isworkouts = false;
       this.isleftworkouts = false;
     }
+
+    this.home = "nav-item";
+    this.gen = "nav-item active";
+    this.workout = "nav-item";
   }
 
   toWorkouts() {
@@ -66,5 +80,10 @@ export class HomeComponent implements OnInit {
       this.isleftgendash = false;
       this.isworkoutgendash = false;
     }
+
+    this.home = "nav-item";
+    this.gen = "nav-item";
+    this.workout = "nav-item active";
   }
+
 }

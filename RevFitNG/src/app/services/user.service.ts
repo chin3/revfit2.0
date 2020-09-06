@@ -14,11 +14,13 @@ export class UserService {
   constructor(private http: HttpClient) { }
 
   loginUser(username, password){
-    return this.http.post<User>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/user/login',{"username": username , "password":password},{headers: this.headers});
+    //return this.http.post<User>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/user/login',{"username": username , "password":password},{headers: this.headers});
+    return this.http.post<User>('http://localhost:8081/user/login',{"username": username , "password":password},{headers: this.headers});
   }
 
   registerUser(new_user) {
-    return this.http.post<User>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/user', JSON.stringify(new_user), {headers: this.headers});
+    //return this.http.post<User>('http://ec2-3-12-196-129.us-east-2.compute.amazonaws.com:8081/user', JSON.stringify(new_user), {headers: this.headers});
+    return this.http.post<User>('http://localhost:8081/user', JSON.stringify(new_user), {headers: this.headers});
   }
 
 }

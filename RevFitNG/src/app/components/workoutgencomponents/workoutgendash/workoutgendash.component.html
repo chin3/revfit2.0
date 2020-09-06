@@ -7,12 +7,12 @@
             </button>
         </div>
         <div class="modal-body">
-            <div class="modal-body mx-3">
+            <div class="modal-body mx-3" style="margin:auto">
                 <div id="excerciseTable">
                     <label>Current Exercises</label>
                     <table>
                         <tr *ngFor="let in of counter(amountOfCards); let i = index">
-                            <td>
+                            <td >
                                 Exercise {{i+1}}<br>
                                 <div class="card" style="width: 18rem;">
 
@@ -33,8 +33,8 @@
                             <td>
                                 <div class="card" style="width: 18rem;">
                                     <div class="card-body">
-                                        <button (click)="addCard()" class="card-link">Add Exercise</button>
-                                        <button (click)="deleteMostRecentCard()" class="card-link">Delete Recent Exercise</button>
+                                        <button (click)="addCard()" class="card-link btn btn-primary">Add Exercise</button>
+                                        <button (click)="deleteMostRecentCard()" class="card-link btn btn-primary">Delete Recent Exercise</button>
                                     </div>
                                 </div>
                             <td>
@@ -67,9 +67,9 @@
             </div>
         </div>
         <br>
-        <button (click)="open(mymodal)">Add Workout</button>
+        <button class="btn btn-primary" (click)="open(mymodal)">Add Workout</button>
     </div>
     <div class="card-footer">
-        <small class="text-muted">Last updated 3 mins ago</small>
+        <small class="text-muted">RevFitTM: Coming Soon</small>
     </div>
 </div>

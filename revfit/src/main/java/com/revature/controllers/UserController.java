@@ -18,7 +18,8 @@ import com.revature.beans.User;
 import com.revature.services.UserService;
 import com.revature.util.UsernamePassword;
 
-@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
+//@CrossOrigin(maxAge = 3600, origins = "http://revfitbucket.s3-website.us-east-2.amazonaws.com")
+@CrossOrigin(maxAge = 3600, origins = "http://localhost:4200")
 @RestController
 public class UserController {
 	@Autowired

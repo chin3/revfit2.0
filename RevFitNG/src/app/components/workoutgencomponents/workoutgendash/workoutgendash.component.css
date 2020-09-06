@@ -1,0 +1,8 @@
+.card {
+    text-align: center;
+}
+
+#inputDiv > * {
+    padding: 10px;
+    margin: 2px;
+}
